@@ -1,0 +1,25 @@
+
+.navbar-nav>li{
+	margin-left: 1rem;
+}
+.navbar-nav>li>a{
+	border-radius: 5px;
+	min-width: 100px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: .2rem;
+	padding: .4rem;
+	transition: .2s background;
+}
+.navbar-nav>li>a:not(.active){
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+.navbar-nav>li.active>a{
+	border: 2px solid #fff;
+}
+.navbar-nav>li>a:hover{
+	color: #7642c7;
+}
