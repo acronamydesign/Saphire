@@ -26,4 +26,3 @@ route.create(app, {
 	template:"index.jade"
 }, /*data*/{render:render});
 
-//console.log(app._router.stack[2])
