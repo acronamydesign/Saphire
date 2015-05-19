@@ -3,10 +3,12 @@ var express = require('express'),
 		path = require('path'),
 		route = require('./routes/route.js'),
 		//magic
-		saphire = require('saphire'),
+		saphire = require('saphire').functions,
 		saphireAdmin = require('saphire-admin'),
 		saphireRegions = require('saphire-regions'),
 		render = saphireRegions.render.bind(saphireRegions);
+
+
 
 var conf = {
 	port:3000,
@@ -18,8 +20,11 @@ app.listen(conf.port);
 app.set('views', __dirname + '/public/views/');
 app.set('view engine', conf.templates);
 
+//new
+saphire.set("use", "./public");
+
 saphireRegions.use("./public");
-saphireAdmin.routes(app)
+saphireAdmin.routes(app);
 
 route.create(app, {
 	url:"/",
