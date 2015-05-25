@@ -4,6 +4,7 @@ var express = require('express'),
 		route = require('./routes/route.js'),
 		//magic
 		saphire = require('saphire').functions,
+		saphireData = require('saphire').data,
 		saphireAdmin = require('saphire-admin');
 
 app.locals.inspect = require('util').inspect;
@@ -18,13 +19,20 @@ app.listen(conf.port);
 app.set('views', __dirname + '/public/views/');
 app.set('view engine', conf.templates);
 
-//saphire.use("./public");
+saphire.set("public","./public")
+saphire.set("db",{
+	host:"127.0.0.1",
+	port:"27017",
+	database:"saphire"
+});
 
-saphireAdmin.routes(app, saphire.use("./public"));
-
+saphire.db("mongodb")
+saphireAdmin.routes(app, saphire.use(saphire.public()));
 
 route.create(app, {
 	url:"/",
 	template:"index.jade"
 }, /*data*/{render:saphire.render});
 
+
+console.log(saphire)
