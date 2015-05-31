@@ -20,15 +20,10 @@ app.set('views', __dirname + '/public/views/');
 app.set('view engine', conf.templates);
 
 
-
-saphire.set("public","./public")
-
+//KEEP
 saphire.start(app);
 
-saphireAdmin.routes(app, saphire.use(saphire.public()));
+//NEED TO CHANGE
+saphireAdmin.routes(app, app.settings.views);
 
-route.create(app, {
-	url:"/",
-	template:"index.jade"
-}, /*data*/{render:saphire.render});
 
