@@ -1,0 +1,11 @@
+{
+  "name": "saphire",
+  "version": "1.0.0",
+  "description": "The default theme for foxie cms",
+  "main": "saphire.info.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Crockett",
+  "license": "ISC"
+}

@@ -3,11 +3,7 @@ var express = require('express'),
 		path = require('path'),
 		route = require('./routes/route.js'),
 		//magic
-		saphire = require('saphire').functions,
-		saphireData = require('saphire').data,
-		saphireAdmin = require('saphire-admin');
-
-app.locals.inspect = require('util').inspect;
+		saphire = require('saphire').functions;
 
 var conf = {
 	port:3000,
@@ -24,6 +20,6 @@ app.set('view engine', conf.templates);
 saphire.start(app);
 
 //NEED TO CHANGE
-saphireAdmin.routes(app, app.settings.views);
+//saphireAdmin.routes(app, app.settings.views);
 
 
