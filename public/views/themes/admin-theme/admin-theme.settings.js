@@ -9,4 +9,4 @@ classes["nav"] = "navbar nav"
 
 
 //temporary test
-blocks["content"] = "Hello world"
+blocks["content"] = "Hello world This is psudo block content"
